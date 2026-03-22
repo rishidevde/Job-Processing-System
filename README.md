@@ -3,14 +3,14 @@ A full-stack background job processing system built with FastAPI and React. Subm
 
 ## Setup Backend
 ```bash
-cd D:\jobbi\backend
+cd Job-Processing-System/backend
 python -m pip install -r requirements.txt
 python -m uvicorn main:app --reload
 ```
 
 ## Setup Frontend
 ```bash
-cd D:\jobbi\frontend
+cd Job-Processing-System/frontend
 npm install
 npm run dev
 ```
