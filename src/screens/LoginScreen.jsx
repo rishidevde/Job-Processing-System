@@ -55,9 +55,9 @@ export function LoginScreen() {
       return;
     }
 
-    // 4. Check Password matches system password 2725
+    // 4. Check Password matches system password
     if (cleanPassword !== "2725") {
-      setErrorMessage("Incorrect Password. Please enter the valid staff password.");
+      setErrorMessage("Incorrect Password. Please enter the valid password.");
       return;
     }
 
@@ -332,7 +332,7 @@ export function LoginScreen() {
                   type={showPassword ? "text" : "password"}
                   className="field-input"
                   style={{ paddingLeft: "38px", paddingRight: "38px", height: "40px", fontSize: "13px", width: "100%" }}
-                  placeholder="Enter staff password (2725)"
+                  placeholder="YYYY"
                   value={password}
                   onInput={(e) => {
                     setPassword(e.target.value);
@@ -358,9 +358,6 @@ export function LoginScreen() {
                   </span>
                 </button>
               </div>
-              <span className="field-helper" style={{ fontSize: "11px" }}>
-                Default system password: <strong>2725</strong>
-              </span>
             </div>
 
             {/* Submit Action */}
