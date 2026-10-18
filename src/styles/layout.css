@@ -1,0 +1,216 @@
+/* Samruddhi HMS Shell & Viewport Grid Layout */
+
+/* Shell Container */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--color-page);
+}
+
+/* Fixed 56px Top Bar */
+.shell-topbar {
+  height: var(--top-bar-height);
+  min-height: var(--top-bar-height);
+  background-color: var(--color-card);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 40;
+}
+
+/* Main Body Area: Sidebar (240px) + Dynamic Workspace */
+.shell-body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  height: calc(100vh - var(--top-bar-height));
+  overflow: hidden;
+}
+
+/* Fixed 240px Sidebar */
+.shell-sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  background-color: var(--color-card);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 30;
+}
+
+/* Workspace Canvas */
+.shell-workspace {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--color-page);
+}
+
+/* Patient Identity Strip: 64px */
+.patient-identity-strip {
+  height: var(--patient-strip-height);
+  min-height: var(--patient-strip-height);
+  background-color: var(--color-card);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 20;
+}
+
+/* Encounter Stepper Bar: 40px */
+.encounter-stepper-bar {
+  height: var(--stepper-height);
+  min-height: var(--stepper-height);
+  background-color: #F8FAFC;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  z-index: 10;
+}
+
+/* Screen Content Area */
+.screen-container {
+  flex: 1;
+  min-height: 0;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+}
+
+/* Fullscreen Center Screen (e.g. Login SCR-01) */
+.fullscreen-center {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Split Pane Layouts */
+.split-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  height: 100%;
+  min-height: 0;
+}
+
+.split-68-32 {
+  display: grid;
+  grid-template-columns: 68fr 32fr;
+  gap: 16px;
+  height: 100%;
+  min-height: 0;
+}
+
+.split-3-col-workspace {
+  display: grid;
+  grid-template-columns: 240px 1fr 340px;
+  gap: 16px;
+  height: 100%;
+  min-height: 0;
+}
+
+.split-44-56 {
+  display: grid;
+  grid-template-columns: 44fr 56fr;
+  gap: 16px;
+  height: 100%;
+  min-height: 0;
+}
+
+.split-40-60 {
+  display: grid;
+  grid-template-columns: 40fr 60fr;
+  gap: 16px;
+  height: 100%;
+  min-height: 0;
+}
+
+/* Modal Overlay & Dialog */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.15s ease-out;
+}
+
+.modal-dialog {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: scaleUp 0.15s ease-out;
+}
+
+.modal-sm { width: 480px; }
+.modal-md { width: 600px; }
+.modal-lg { width: 720px; }
+.modal-xl { width: 880px; }
+
+/* Slide-Over Drawer: 420px standard, 520px wide */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.35);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 90;
+  animation: fadeIn 0.15s ease-out;
+}
+
+.drawer-panel {
+  background-color: var(--color-card);
+  border-left: 1px solid var(--color-border);
+  height: 100%;
+  box-shadow: var(--shadow-drawer);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideLeft 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.drawer-std { width: 420px; }
+.drawer-wide { width: 520px; }
+.drawer-full { width: 680px; }
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.97); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}

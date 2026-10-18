@@ -1,0 +1,90 @@
+/* Samruddhi HMS Design Tokens (prototype1.md v3.1 & DESIGN.md) */
+:root {
+  /* Brand & Core Color Palette */
+  --color-brand-blue: #1E3A8A;
+  --color-primary: #2563EB;
+  --color-primary-hover: #1D4ED8;
+  --color-primary-active: #1E40AF;
+  --color-primary-container: #0052CC;
+  --color-active-surface: #EFF6FF;
+  --color-active-border: #93C5FD;
+
+  /* Surfaces & Neutral Backgrounds */
+  --color-page: #F8FAFC;
+  --color-card: #FFFFFF;
+  --color-subtle-bg: #F1F5F9;
+  --color-hover-bg: #F8FAFC;
+  --color-border: #E2E8F0;
+  --color-border-subtle: #CBD5E1;
+
+  /* Typography / Text Colors */
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94A3B8;
+  --color-text-inverse: #FFFFFF;
+
+  /* Status Colors: Strictly Enforcing The One-Colour Rule (prototype1.md §3.4) */
+  /* Clinical Risk ONLY uses Red & Amber */
+  --color-critical-text: #B91C1C;
+  --color-critical-bg: #FEF2F2;
+  --color-critical-border: #FCA5A5;
+  
+  --color-urgent-text: #B45309;
+  --color-urgent-bg: #FFFBEB;
+  --color-urgent-border: #FDE68A;
+
+  /* Operational, Financial, Exceptions use Slate, Blue, Plum (NOT Red/Amber) */
+  --color-action-needed-text: #7E22CE;
+  --color-action-needed-bg: #FAF5FF;
+  --color-action-needed-border: #E9D5FF;
+
+  --color-completed-text: #047857;
+  --color-completed-bg: #ECFDF5;
+  --color-completed-border: #A7F3D0;
+
+  --color-waiting-text: #64748B;
+  --color-waiting-bg: #F1F5F9;
+  --color-waiting-border: #E2E8F0;
+
+  --color-isolation-text: #0E7490;
+  --color-isolation-bg: #ECFEFF;
+  --color-isolation-border: #A5F3FC;
+
+  /* Semantic Aliases for Cross-Component Parity */
+  --color-interactive-primary: var(--color-primary);
+  --color-bg-primary: var(--color-card);
+  --color-bg-secondary: var(--color-subtle-bg);
+  --color-clinical-red: var(--color-critical-text);
+  --color-clinical-amber: var(--color-urgent-text);
+  --color-clinical-emerald: var(--color-completed-text);
+  --color-operational-plum: var(--color-action-needed-text);
+  --color-operational-plum-bg: var(--color-action-needed-bg);
+  --color-operational-plum-border: var(--color-action-needed-border);
+  --color-red-50: var(--color-critical-bg);
+  --color-red-700: #B91C1C;
+  --color-amber-50: var(--color-urgent-bg);
+  --color-amber-700: #B45309;
+  --color-emerald-50: var(--color-completed-bg);
+  --color-emerald-700: #047857;
+  --color-primary-100: #DBEAFE;
+  --color-primary-50: #EFF6FF;
+
+  /* Geometry & Metrics (prototype1.md §3.7) */
+  --top-bar-height: 56px;
+  --sidebar-width: 240px;
+  --patient-strip-height: 64px;
+  --stepper-height: 40px;
+  --table-header-height: 40px;
+  --table-row-height: 44px;
+  --button-height: 40px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-drawer: -4px 0 24px rgba(0, 0, 0, 0.15);
+}
