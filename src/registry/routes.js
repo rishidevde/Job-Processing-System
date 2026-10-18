@@ -288,5 +288,5 @@ export function findRouteByPath(currentHash) {
       return r;
     }
   }
-  return ROUTES[1]; // default to Dashboard
+  return ROUTES[0]; // default to Login (SCR-01)
 }

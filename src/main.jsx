@@ -295,16 +295,27 @@ function DeveloperDock() {
 export function App() {
   const route = currentRoute.value;
   const state = appState.value;
-  const isLoggedIn = state.session && state.session.isLoggedIn !== false;
-  const isLogin = !isLoggedIn || route.path === "#/login" || route.path === "/login";
+  const isLoggedIn = Boolean(state.session && state.session.isLoggedIn === true);
 
-  const activeScreen = isLogin ? <LoginScreen /> : resolveScreen(route.path);
+  // Strict Authentication Wall: If not logged in, enforce #/login and show ONLY LoginScreen
+  if (!isLoggedIn) {
+    if (window.location.hash !== "#/login") {
+      window.location.hash = "#/login";
+    }
+    return (
+      <div style={{ width: "100vw", height: "100vh", overflow: "hidden" }}>
+        <LoginScreen />
+      </div>
+    );
+  }
 
-  if (isLogin) {
+  const isLoginRoute = route.path === "#/login" || route.path === "/login";
+  const activeScreen = isLoginRoute ? <LoginScreen /> : resolveScreen(route.path);
+
+  if (isLoginRoute) {
     return (
       <div style={{ width: "100vw", height: "100vh", overflow: "hidden" }}>
         {activeScreen}
-        <DeveloperDock />
       </div>
     );
   }

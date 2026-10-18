@@ -14,7 +14,7 @@ export function getInitialSeed() {
       clockTime: "10:45 AM",
       clockDate: "18 Oct 2026",
       isOffline: false,
-      isLoggedIn: true
+      isLoggedIn: false
     },
 
     // Patients (D1, D2)

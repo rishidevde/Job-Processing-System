@@ -16,6 +16,9 @@ function loadState() {
     if (saved) {
       const parsed = JSON.parse(saved);
       if (parsed.patients && parsed.beds && parsed.queue && parsed.orders) {
+        if (parsed.session) {
+          parsed.session.isLoggedIn = false;
+        }
         return parsed;
       }
     }

@@ -6,7 +6,7 @@ import { signal } from "@preact/signals";
 import { activeBlockingInterlock, addToast } from "./store.js";
 
 function parseHash() {
-  const hash = window.location.hash || "#/dashboard";
+  const hash = window.location.hash || "#/login";
   const [pathPart, queryPart] = hash.split("?");
   const query = {};
 
