@@ -43,9 +43,3 @@ A high-performance, responsive Hospital Management System (HMS) built to connect
    npm run build
    npm run preview
    ```
-
----
-
-### Demo Credentials
-- **Mobile**: Any valid 10-digit registered number (e.g., `9822100000`)
-- **Password**: `2725`
